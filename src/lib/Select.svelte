@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { countSelectedCountries } from "../store";
+  import { countSelectedCountries } from "./store";
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
   export let isDrop: boolean;
 
   function playDropdown() {
-    dispatch("playDropdown", true);
+    dispatch("playDropdown", "");
   }
 </script>
 

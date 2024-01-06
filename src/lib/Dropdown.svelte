@@ -1,8 +1,15 @@
 <script lang="ts">
-  import { allCountries } from "../store";
+  import { allCountries } from "./store";
+  import { clickOutside } from "./clickOutside";
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
 </script>
 
-<div id="dropdown">
+<div
+  id="dropdown"
+  use:clickOutside
+  on:outclick={() => dispatch("onClose", false)}
+>
   {#each $allCountries as country (country.countryName)}
     <div class="container">
       <input
@@ -26,5 +33,6 @@
     justify-content: space-between;
     padding: 5px;
     border-radius: 4px;
+    border: 1px solid red;
   }
 </style>

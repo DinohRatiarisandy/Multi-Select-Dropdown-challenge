@@ -3,13 +3,17 @@
   import Select from "./lib/Select.svelte";
 
   let isDrop = false;
+
+  function handleToggleDropdown(e: CustomEvent) {
+    isDrop = isDrop === true ? false : true;
+  }
 </script>
 
 <main>
-  <Select on:playDropdown={() => (isDrop = !isDrop)} {isDrop} />
+  <Select on:playDropdown={handleToggleDropdown} {isDrop} />
 
   {#if isDrop}
-    <Dropdown />
+    <Dropdown on:onClose={({ detail }) => handleToggleDropdown(detail)} />
   {/if}
 </main>
 
