@@ -7,8 +7,9 @@
 
 <div
   id="dropdown"
-  use:clickOutside
-  on:outclick={() => dispatch("onClose", false)}
+  use:clickOutside={() => {
+    dispatch("close-dropdown", false);
+  }}
 >
   {#each $allCountries as country (country.countryName)}
     <div class="container">

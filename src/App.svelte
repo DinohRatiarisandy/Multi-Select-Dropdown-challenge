@@ -7,13 +7,18 @@
   function handleToggleDropdown(e: CustomEvent) {
     isDrop = isDrop === true ? false : true;
   }
+
+  function handleClose(event: CustomEvent) {
+    isDrop = event.detail;
+    event?.stopPropagation();
+  }
 </script>
 
 <main>
   <Select on:playDropdown={handleToggleDropdown} {isDrop} />
 
   {#if isDrop}
-    <Dropdown on:onClose={({ detail }) => handleToggleDropdown(detail)} />
+    <Dropdown on:close-dropdown={handleClose} />
   {/if}
 </main>
 

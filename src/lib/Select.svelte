@@ -10,8 +10,8 @@
   }
 </script>
 
-<div id="select">
-  <button on:click={playDropdown}>
+<div>
+  <button id="select" on:click={playDropdown}>
     {$countSelectedCountries} pays sélectionné{$countSelectedCountries > 1
       ? "s"
       : ""}
@@ -22,9 +22,10 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6"
+        class="svg w-6 h-6"
       >
         <path
+          class="svg"
           stroke-linecap="round"
           stroke-linejoin="round"
           d="m19.5 8.25-7.5 7.5-7.5-7.5"
@@ -37,9 +38,10 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="w-6 h-6"
+        class="svg w-6 h-6"
       >
         <path
+          class="svg"
           stroke-linecap="round"
           stroke-linejoin="round"
           d="m8.25 4.5 7.5 7.5-7.5 7.5"
